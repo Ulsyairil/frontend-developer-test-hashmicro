@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Frontend Developer Test — CRUD</title>
+
+  <link rel="shortcut icon" href="https://www.hashmicro.com/assets/ico/favicon.ico" type="image/x-icon">
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- Materialize CSS (Material Design CSS framework) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <!-- Top progress (cosmetic) -->
+  <div id="topProgress" class="hm-top-progress"></div>
+
+  <!-- Navbar -->
+  <nav class="hm-nav z-depth-1">
+    <div class="nav-wrapper container hm-nav-wrapper">
+      <a href="/" class="brand-logo hm-brand">
+        <span class="hm-badge">HM</span>
+      </a>
+
+      <a href="javascript:void(0)" data-target="hm-sidenav" class="sidenav-trigger right">
+        <i class="material-icons">menu</i>
+      </a>
+
+      <ul class="right hide-on-med-and-down hm-nav-links pl-12">
+        <li><a href="/" class="hm-link"><i class="material-icons left">list</i>Records</a></li>
+        <li><a href="/create" class="hm-link"><i class="material-icons left">add</i>Create</a></li>
+        <li><a href="/about" class="hm-link"><i class="material-icons left">info</i>About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Side nav -->
+  <ul class="sidenav" id="hm-sidenav">
+    <li><a href="/" class="hm-sidenav-link"><i class="material-icons">list</i>Records</a></li>
+    <li><a href="/create" class="hm-sidenav-link"><i class="material-icons">add</i>Create</a></li>
+    <li><a href="/about" class="hm-sidenav-link"><i class="material-icons">info</i>About</a></li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Cosmetics</a></li>
+    <li><a href="/" id="toggleDense" class="hm-sidenav-link"><i class="material-icons">tune</i>Toggle Dense Table</a>
+    </li>
+  </ul>
+
+  <!-- Main -->
+  <main class="hm-main">
+    <div class="container hm-container">
+      <div id="app">
+        <!-- Route transition -->
+        <transition name="hm-fade-slide" mode="out-in">
+          <component :is="currentView" :key="routeKey"></component>
+        </transition>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="page-footer hm-footer">
+    <div class="container">
+      <div class="row hm-footer-row">
+        <div class="col s12 m8">
+          <h6 class="white-text hm-footer-title">Frontend Developer Test</h6>
+          <p class="grey-text text-lighten-4 hm-footer-text">
+            Runs directly in the browser (no build step). Uses Vue 3 CDN, Pinia CDN, Materialize CSS, jQuery, and
+            IndexedDB.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright hm-footer-copy">
+      <div class="container">
+        <span>© <span id="yearNow"></span> — HashMicro Frontend Developer Test</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery (CDN) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Materialize JS (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- Vue 3 (global build) -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+  <!-- Vue Demi (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vue-demi@0.14.10/lib/index.iife.min.js"></script>
+
+  <!-- Pinia (CDN) -->
+  <script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
+
+  <!-- Config scripts -->
+  <script src="./assets/js/db.js"></script>
+  <script src="./assets/js/store.js"></script>
+  <script src="./assets/js/router.js"></script>
+
+  <!-- Views scripts -->
+  <script src="./assets/js/views/_init.js"></script>
+  <script src="./assets/js/views/_shared.js"></script>
+  <script src="./assets/js/views/record-list.js"></script>
+  <script src="./assets/js/views/create-record.js"></script>
+  <script src="./assets/js/views/view-record.js"></script>
+  <script src="./assets/js/views/edit-record.js"></script>
+  <script src="./assets/js/views/about.js"></script>
+
+  <!-- App scripts -->
+  <script src="./assets/js/jquery-enhancements.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
