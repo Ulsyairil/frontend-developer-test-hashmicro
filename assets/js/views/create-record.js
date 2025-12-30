@@ -114,17 +114,6 @@
               </div>
             </div>
           </div>
-
-          <div class="card-panel hm-card" style="padding:14px;border-radius:16px;background:rgba(255,111,0,0.06);">
-            <div class="hm-flex">
-              <i class="material-icons" style="color:var(--hm-orange)">lightbulb</i>
-              <div>
-                <strong>Reviewer-friendly:</strong>
-                <span class="hm-muted">No packages, no build step. Open <code>index.html</code> directly.</span>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     `
